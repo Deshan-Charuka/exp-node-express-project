@@ -14,9 +14,13 @@ app.use("/add-product", (req, res, next) => {
   ); //sending the response
 });
 
-app.use("/product", (req, res, next) => {
+app.post("/product", (req, res, next) => {
   console.log(req.body);
   res.redirect("/");
+});
+
+app.get('/product', (req,res,next) => {
+  res.send('<h1>Product page</h1>');
 });
 
 //middleware function 01 | Common middleware (All the requests will go through this..)
